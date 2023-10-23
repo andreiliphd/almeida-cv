@@ -1,0 +1,25 @@
+.wes {
+    &__item {
+        display: table;
+        width: 100%;
+    }
+
+    &__name,
+    &__level {
+        display: table-cell;
+        width: 50%;
+    }
+
+    &__name {
+        color: $color-primary;
+        text-decoration: none;
+    }
+    &__level {
+        text-align: right;
+    }
+
+    a, a.active {
+        color: $color-dark;
+        text-decoration: none;
+    }
+}
