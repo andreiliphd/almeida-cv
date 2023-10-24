@@ -8,7 +8,11 @@
             {{ range .wes }}
             <li class="wes__item">
                 <div class="wes__name">{{ . | safeHTML }}</div>
-                <div class="wes__level"><a href={{ delimit (slice "docs/" (delimit (slice . ".bmp") "")) "" }}>Download</a></div>
+                <div class="wes__level">
+                    {{ $image := resources.Get (delimit (slice "docs/" (delimit (slice . ".jpg") "")) "" ) }}
+                    <a href={{ $image.RelPermalink }}>
+                    {{ $image := $image.Resize "x15" }}
+                <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}"></a></div>
             </li>
             {{ end }}
         </ul>
